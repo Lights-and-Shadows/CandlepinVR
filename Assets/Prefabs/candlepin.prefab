@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7604245270902055167}
   - component: {fileID: 6784795286725242714}
   - component: {fileID: 8776556986596613008}
-  - component: {fileID: 6923158428737642246}
   - component: {fileID: 1419197001048759628}
+  - component: {fileID: 3365041362020018412}
   m_Layer: 0
   m_Name: candlepin
   m_TagString: Untagged
@@ -81,20 +81,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6923158428737642246
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7119175493634488901}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6849795856638667086, guid: 0b43f80f57873cc4c892538c708e5948, type: 3}
 --- !u!54 &1419197001048759628
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -111,3 +97,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!64 &3365041362020018412
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119175493634488901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_Mesh: {fileID: 6849795856638667086, guid: 0b43f80f57873cc4c892538c708e5948, type: 3}
