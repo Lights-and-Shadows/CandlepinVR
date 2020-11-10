@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2431031429826251946}
   - component: {fileID: 6895601253494738276}
   - component: {fileID: 929269378242254438}
+  - component: {fileID: -7057247720992890993}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3987150499367381744}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
@@ -92,12 +93,12 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &6895601253494738276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,25 +116,22 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_OnFirstHoverEntered:
+  m_OnFirstHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverEntered:
+  m_OnHoverEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnHoverExited:
+  m_OnHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnLastHoverExited:
+  m_OnLastHoverExit:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectEntered:
+  m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls: []
-  m_OnSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OnSelectCanceled:
+  m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
   m_OnActivate:
@@ -171,8 +169,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
+  m_ThrowVelocityScale: 2.5
+  m_ThrowAngularVelocityScale: 2.5
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
 --- !u!135 &929269378242254438
@@ -182,9 +180,22 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3987150499367381744}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 258381a5a1a20e74aaa3a5f262eb31ef, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.0005715
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-7057247720992890993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3987150499367381744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bfbf7ebdba51864ebf9f5d0805a64c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 2431031429826251946}
