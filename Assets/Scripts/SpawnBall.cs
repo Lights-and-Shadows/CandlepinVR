@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnBall : MonoBehaviour
 {
     public GameObject ball;
-    public GameObject returnArea;
+    public Transform ballSpawnLoc;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,8 @@ public class SpawnBall : MonoBehaviour
     {
         if (other.tag == "Ball")
         {
-
+            Destroy(other.gameObject, 3f);
+            Instantiate(ball, ballSpawnLoc);
         }
     }
 
