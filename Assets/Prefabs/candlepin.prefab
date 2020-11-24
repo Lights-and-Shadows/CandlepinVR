@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8776556986596613008}
   - component: {fileID: 1419197001048759628}
   - component: {fileID: 5338622066853535653}
+  - component: {fileID: 3129996198497865974}
+  - component: {fileID: 6721190677880988821}
   m_Layer: 0
   m_Name: candlepin
   m_TagString: Untagged
@@ -108,6 +110,32 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.00038899732
-  m_Height: 0.004058032
+  m_Height: 0.0037287397
   m_Direction: 2
-  m_Center: {x: 1.4901161e-10, y: -1.4901161e-10, z: 0.0000031842292}
+  m_Center: {x: 1.4901161e-10, y: -1.4901161e-10, z: 0.000009809137}
+--- !u!65 &3129996198497865974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119175493634488901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0006140748, y: 0.0007461251, z: 0.00012609448}
+  m_Center: {x: 5.5879353e-11, y: -1.1175873e-10, z: 0.0019403996}
+--- !u!65 &6721190677880988821
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119175493634488901}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0006140746, y: 0.0007461251, z: 0.000115093404}
+  m_Center: {x: 5.5879353e-11, y: -1.1175868e-10, z: -0.0019395233}
