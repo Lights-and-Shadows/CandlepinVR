@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4401730782233975448}
   - component: {fileID: 8418567238696561884}
   - component: {fileID: 7301494679831620862}
-  - component: {fileID: 5723732943274261744}
   m_Layer: 0
   m_Name: candlepin
   m_TagString: Untagged
@@ -97,7 +96,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
 --- !u!64 &7301494679831620862
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -105,22 +104,10 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2601674429986306016}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 18c846a29ad07ed4d93c7503487ba4ef, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 6849795856638667086, guid: 0b43f80f57873cc4c892538c708e5948, type: 3}
---- !u!114 &5723732943274261744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2601674429986306016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75f51fa2d7a3b974c88d6b83fd998b29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Mesh: {fileID: 8441442022192592551, guid: d02967e885d05c44eb344bae90ef6094, type: 3}
