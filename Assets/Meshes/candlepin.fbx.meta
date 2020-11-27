@@ -10,7 +10,7 @@ ModelImporter:
       name: pin
     second: {fileID: 2100000, guid: 13fb2176db00bfb49a307ebc8b671fb0, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
