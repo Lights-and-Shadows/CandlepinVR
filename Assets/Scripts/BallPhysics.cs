@@ -27,7 +27,7 @@ public class BallPhysics : MonoBehaviour
 
     public IEnumerator InvokeScoring()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(3f);
 
         scoring.CheckScore();
     }

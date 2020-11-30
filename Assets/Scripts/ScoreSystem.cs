@@ -79,6 +79,8 @@ public class ScoreSystem : MonoBehaviour
                     gameOver = true;
                 break;
         }
+
+        Debug.Log("Score: " + score.ToString());
     }
 
     private void EndGame()
