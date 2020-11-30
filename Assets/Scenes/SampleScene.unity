@@ -947,6 +947,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candlepin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
 --- !u!1 &594665061 stripped
@@ -1066,6 +1071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candlepin (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
@@ -2231,6 +2241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candlepin (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
 --- !u!1 &1113191022 stripped
@@ -2320,6 +2335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candlepin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
@@ -2967,6 +2987,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candlepin (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
 --- !u!1 &1463563989 stripped
@@ -3056,6 +3081,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candlepin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
@@ -3366,6 +3396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candlepin (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
 --- !u!1 &1856864580 stripped
@@ -3455,6 +3490,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: candlepin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
@@ -3708,6 +3748,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candlepin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
 --- !u!1 &1939690254 stripped
@@ -3955,6 +4000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: candlepin
       objectReference: {fileID: 0}
+    - target: {fileID: 2601674429986306016, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pin
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbe3b1c9acd4d3429c04bb48f4f7c6c, type: 3}
 --- !u!1001 &4028216498863791025
@@ -4029,6 +4079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: lane
       objectReference: {fileID: 0}
+    - target: {fileID: 1872402710337263103, guid: dbb1f2549dceb5546ab162c2a8e1250b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lane
+      objectReference: {fileID: 0}
     - target: {fileID: 2459986578703126766, guid: dbb1f2549dceb5546ab162c2a8e1250b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4054,6 +4109,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1778d0801be1e15419da8f7ae675bd89, type: 2}
+    - target: {fileID: 7690576157120107022, guid: dbb1f2549dceb5546ab162c2a8e1250b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lane
+      objectReference: {fileID: 0}
     - target: {fileID: 7723433627078264218, guid: dbb1f2549dceb5546ab162c2a8e1250b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

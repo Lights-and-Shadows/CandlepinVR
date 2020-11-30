@@ -5,15 +5,29 @@ using UnityEngine;
 public class BallPhysics : MonoBehaviour
 {
     public Rigidbody rb;
+
+    public ScoreSystem scoring;
+
+    public bool hasBeenRolled;
     // Start is called before the first frame update
     void Start()
     {
         rb.maxAngularVelocity = 50f;
+        hasBeenRolled = false;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.tag == "Lane")
+        {
+            hasBeenRolled = true;
+        }
+    }
+
+    public IEnumerator InvokeScoring()
+    {
+        yield return new WaitForSeconds(10f);
+
+        scoring.CheckScore();
     }
 }
