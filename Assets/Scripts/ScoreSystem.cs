@@ -12,11 +12,21 @@ public class ScoreSystem : MonoBehaviour
 
     private int score;
 
+    private bool gameOver = false;
+
     private void Start()
     {
         currentRollNum = 0;
         curBoxScore = 0;
         score = 0;
+    }
+
+    private void Update()
+    {
+        if (gameOver)
+        {
+            EndGame();
+        }
     }
 
     public void CheckScore()
@@ -33,6 +43,9 @@ public class ScoreSystem : MonoBehaviour
                     }
                 }
                 score = curBoxScore;
+
+                if (curBox == 10)
+                    gameOver = true;
                 break;
             case 2:
                 foreach (PinPhysics pin in pins)
@@ -46,6 +59,9 @@ public class ScoreSystem : MonoBehaviour
                     }
                 }
                 score = score + curBoxScore;
+
+                if (curBox == 10)
+                    gameOver = true;
                 break;
             case 3:
                 foreach (PinPhysics pin in pins)
@@ -59,7 +75,17 @@ public class ScoreSystem : MonoBehaviour
                     }
                 }
                 score = score + curBoxScore;
+                if (curBox == 10)
+                    gameOver = true;
                 break;
         }
+    }
+
+    private void EndGame()
+    {
+        curBox = 0;
+        curBoxScore = 0;
+        currentRollNum = 0;
+        score = 0;
     }
 }
