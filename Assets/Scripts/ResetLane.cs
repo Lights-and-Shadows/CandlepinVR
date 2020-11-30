@@ -10,31 +10,59 @@ public class ResetLane : MonoBehaviour
 
     public void ResetTheLane()
     {
-        // Reset all moveable objects back to starting positions in scene + remove any current forces on them.
-        foreach(GameObject spawn in pinSpawns)
+        if (scoring.currentRollNum == 0)
         {
-            pins[pinSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
-            pins[pinSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            // Reset all moveable objects back to starting positions in scene + remove any current forces on them.
+            foreach (GameObject spawn in pinSpawns)
+            {
+                pins[pinSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
+                pins[pinSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().knocked = false;
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().previouslyHit = false;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().knocked = false;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().previouslyHit = false;
+            }
+
+            foreach (GameObject spawn in ballSpawns)
+            {
+                balls[ballSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
+                balls[ballSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
+                balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+                // Reset checks for balls that were rolled -- important
+                balls[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().hasBeenRolled = false;
+            }
         }
-
-        foreach(GameObject spawn in ballSpawns)
+        else
         {
-            balls[ballSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
-            balls[ballSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
-            balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
-            balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            // Reset all moveable objects back to starting positions in scene + remove any current forces on them.
+            foreach (GameObject spawn in pinSpawns)
+            {
+                pins[pinSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
+                pins[pinSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
-            // Reset checks for balls that were rolled -- important
-            balls[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().hasBeenRolled = false;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().knocked = false;
+                pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().previouslyHit = false;
+            }
+
+            foreach (GameObject spawn in ballSpawns)
+            {
+                balls[ballSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
+                balls[ballSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
+                balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
+                balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+                // Reset checks for balls that were rolled -- important
+                balls[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().hasBeenRolled = false;
+            }
+
+            scoring.currentRollNum = 0;
+            scoring.curBoxScore = 0;
+            scoring.curBox++;
         }
-
-        scoring.currentRollNum = 0;
-        scoring.curBoxScore = 0;
-        scoring.curBox++;
     }
 }
