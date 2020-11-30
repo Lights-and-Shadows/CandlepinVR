@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class ScoreSystem : MonoBehaviour
 {
-    private int rollsPerBox = 3;
-    public int currentRollNum = 0, curBoxScore;
+    public int currentRollNum = 0, curBoxScore, curBox;
 
-    private int maxRolls = 30;
     private int maxBoxes = 10;
 
     public List<PinPhysics> pins;

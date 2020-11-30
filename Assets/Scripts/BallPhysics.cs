@@ -21,6 +21,7 @@ public class BallPhysics : MonoBehaviour
         if (collision.gameObject.tag == "Lane")
         {
             hasBeenRolled = true;
+            scoring.currentRollNum++;
         }
     }
 

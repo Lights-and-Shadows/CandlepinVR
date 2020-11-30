@@ -35,5 +35,6 @@ public class ResetLane : MonoBehaviour
 
         scoring.currentRollNum = 0;
         scoring.curBoxScore = 0;
+        scoring.curBox++;
     }
 }
