@@ -44,7 +44,7 @@ public class ScoreSystem : MonoBehaviour
                 }
                 score = curBoxScore;
 
-                if (curBox == 10)
+                if (curBox == maxBoxes)
                     gameOver = true;
                 break;
             case 2:
@@ -60,7 +60,7 @@ public class ScoreSystem : MonoBehaviour
                 }
                 score = score + curBoxScore;
 
-                if (curBox == 10)
+                if (curBox == maxBoxes)
                     gameOver = true;
                 break;
             case 3:
@@ -75,7 +75,7 @@ public class ScoreSystem : MonoBehaviour
                     }
                 }
                 score = score + curBoxScore;
-                if (curBox == 10)
+                if (curBox == maxBoxes)
                     gameOver = true;
                 break;
         }
