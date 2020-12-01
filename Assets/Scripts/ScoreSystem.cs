@@ -1,93 +1,70 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class ScoreSystem : MonoBehaviour
 {
-    public int currentRollNum = 0, curBoxScore, curBox;
+    int box = 0;
+    int roll = 0;
+    int[] boxData = new int[3];
+    Box currentBox;
 
-    private int maxBoxes = 10;
+    List<Box> summary = new List<Box>(10);
 
-    public List<PinPhysics> pins;
+    // Adding the score
 
-    private int score;
-
-    private bool gameOver = false;
-
-    private void Start()
+    public void AddScore(int pins)
     {
-        currentRollNum = 0;
-        curBoxScore = 0;
-        score = 0;
+        boxData[roll] = pins;
+
+        NextRoll();
     }
 
-    private void Update()
+    void NextRoll()
     {
-        if (gameOver)
+        currentBox = new Box(boxData[0], boxData[1], boxData[2]);
+
+        roll++;
+
+        bool finished = roll == 3 || currentBox.IsStrike || currentBox.IsSpare;
+
+        if (finished)
         {
-            EndGame();
-        }
-    }
-
-    public void CheckScore()
-    {
-        switch (currentRollNum)
-        {
-            case 1:
-                foreach (PinPhysics pin in pins)
-                {
-                    if (pin.knocked)
-                    {
-                        pin.previouslyHit = true;
-                        curBoxScore++;
-                    }
-                }
-                score = curBoxScore;
-
-                if (curBox == maxBoxes)
-                    gameOver = true;
-                break;
-            case 2:
-                foreach (PinPhysics pin in pins)
-                {
-                    if (pin.knocked && pin.previouslyHit)
-                        continue;
-                    else
-                    {
-                        pin.previouslyHit = true;
-                        curBoxScore++;
-                    }
-                }
-                score = score + curBoxScore;
-
-                if (curBox == maxBoxes)
-                    gameOver = true;
-                break;
-            case 3:
-                foreach (PinPhysics pin in pins)
-                {
-                    if (pin.knocked && pin.previouslyHit)
-                        continue;
-                    else
-                    {
-                        pin.previouslyHit = true;
-                        curBoxScore++;
-                    }
-                }
-                score = score + curBoxScore;
-                if (curBox == maxBoxes)
-                    gameOver = true;
-                break;
+            summary.Add(currentBox);
+            roll = 0;
+            box++;
         }
 
-        Debug.Log("Score: " + score.ToString());
     }
 
-    private void EndGame()
+    int GetTotalScore()
     {
-        curBox = 0;
-        curBoxScore = 0;
-        currentRollNum = 0;
-        score = 0;
+        int score = 0;
+        foreach(var box in summary)
+        {
+            score += box.Total;
+        }
+        return score;
+    }
+
+    struct Box
+    {
+        int a;
+        int b;
+        int c;
+
+        public Box(int a, int b, int c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+
+        public int Total { get { return a + b + c; } }
+
+        public bool IsStrike {  get { return a == 10; } }
+        public bool IsSpare { get { return a + b == 10; } }
     }
 }
