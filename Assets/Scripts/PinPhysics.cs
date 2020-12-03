@@ -13,10 +13,10 @@ public class PinPhysics : MonoBehaviour
         previouslyHit = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if ((collision.gameObject.tag == "Ball") || (collision.gameObject.tag == "Pin"))
             knocked = true;
 
-    }
+    }*/
 }

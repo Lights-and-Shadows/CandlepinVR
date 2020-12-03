@@ -15,20 +15,4 @@ public class BallPhysics : MonoBehaviour
         rb.maxAngularVelocity = 50f;
         hasBeenRolled = false;
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Lane")
-        {
-            hasBeenRolled = true;
-            scoring.currentRollNum++;
-        }
-    }
-
-    public IEnumerator InvokeScoring()
-    {
-        yield return new WaitForSeconds(3f);
-
-        scoring.CheckScore();
-    }
 }
