@@ -6,65 +6,98 @@ using TMPro;
 
 public class ScoreSystem : MonoBehaviour
 {
-    int box = 0;
-    int roll = 0;
-    int[] boxData = new int[3];
-    Box currentBox;
+    public int currentRollNum, curBoxScore, curBox;
 
-    List<Box> summary = new List<Box>(10);
+    public List<PinPhysics> pins;
+    public List<BallPhysics> balls;
+    public List<GameObject> boxes;
 
-    // Adding the score
+    private int score;
 
-    public void AddScore(int pins)
+    private bool gameOver = false;
+
+    private void Start()
     {
-        boxData[roll] = pins;
-
-        NextRoll();
+        currentRollNum = 0;
+        curBox = 0;
+        curBoxScore = 0;
+        score = 0;
     }
 
-    void NextRoll()
+    private void Update()
     {
-        currentBox = new Box(boxData[0], boxData[1], boxData[2]);
-
-        roll++;
-
-        bool finished = roll == 3 || currentBox.IsStrike || currentBox.IsSpare;
-
-        if (finished)
+        if (gameOver)
         {
-            summary.Add(currentBox);
-            roll = 0;
-            box++;
+            EndGame();
         }
-
     }
 
-    int GetTotalScore()
+    public void CheckScore()
     {
-        int score = 0;
-        foreach(var box in summary)
+        switch (currentRollNum)
         {
-            score += box.Total;
+            case 1:
+                foreach (PinPhysics pin in pins)
+                {
+                    if (pin.knocked)
+                    {
+                        pin.previouslyHit = true;
+                        curBoxScore++;
+                    }
+                }
+
+                if (curBoxScore == 10)
+                    boxes[curBox].transform.Find("markText").GetComponent<TextMeshProUGUI>().text = "X";
+                else
+                    boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = curBoxScore.ToString();
+
+                score = score + curBoxScore;
+                boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
+                break;
+            case 2:
+                foreach (PinPhysics pin in pins)
+                {
+                    if (pin.knocked && pin.previouslyHit)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        pin.previouslyHit = true;
+                        curBoxScore++;
+                    }
+                }
+                if (curBoxScore == 10)
+                    boxes[curBox].transform.Find("markText").GetComponent<TextMeshProUGUI>().text = "/";
+                else
+                    boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = curBoxScore.ToString();
+
+                score = score + curBoxScore;
+                boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
+                break;
+            case 3:
+                foreach (PinPhysics pin in pins)
+                {
+                    if (pin.knocked && pin.previouslyHit)
+                        continue;
+                    else
+                    {
+                        pin.previouslyHit = true;
+                        curBoxScore++;
+                    }
+                }
+                boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = curBoxScore.ToString();
+                boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
+                score = score + curBoxScore;
+                break;
         }
-        return score;
     }
 
-    struct Box
+    private void EndGame()
     {
-        int a;
-        int b;
-        int c;
-
-        public Box(int a, int b, int c)
-        {
-            this.a = a;
-            this.b = b;
-            this.c = c;
-        }
-
-        public int Total { get { return a + b + c; } }
-
-        public bool IsStrike {  get { return a == 10; } }
-        public bool IsSpare { get { return a + b == 10; } }
+        curBox = 0;
+        curBoxScore = 0;
+        currentRollNum = 0;
+        score = 0;
     }
 }

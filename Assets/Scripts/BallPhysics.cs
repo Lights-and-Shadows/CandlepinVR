@@ -13,6 +13,22 @@ public class BallPhysics : MonoBehaviour
     void Start()
     {
         rb.maxAngularVelocity = 50f;
-        hasBeenRolled = false;
+        //hasBeenRolled = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Lane")
+        {
+            scoring.currentRollNum++;
+            StartCoroutine(InvokeScoring());
+        }
+    }
+
+    public IEnumerator InvokeScoring()
+    {
+        yield return new WaitForSeconds(3f);
+
+        scoring.CheckScore();
     }
 }
