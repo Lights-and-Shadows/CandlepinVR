@@ -12,7 +12,7 @@ public class ScoreSystem : MonoBehaviour
     public List<BallPhysics> balls;
     public List<GameObject> boxes;
 
-    private int score;
+    public int score;
 
     private bool gameOver = false;
 
@@ -37,58 +37,34 @@ public class ScoreSystem : MonoBehaviour
         switch (currentRollNum)
         {
             case 1:
-                foreach (PinPhysics pin in pins)
-                {
-                    if (pin.knocked)
-                    {
-                        pin.previouslyHit = true;
-                        curBoxScore++;
-                    }
-                }
-
                 if (curBoxScore == 10)
+                {
                     boxes[curBox].transform.Find("markText").GetComponent<TextMeshProUGUI>().text = "X";
+                    score = score + curBoxScore;
+                    boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
+                }
                 else
                     boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = curBoxScore.ToString();
-
-                score = score + curBoxScore;
-                boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
                 break;
             case 2:
-                foreach (PinPhysics pin in pins)
-                {
-                    if (pin.knocked && pin.previouslyHit)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        pin.previouslyHit = true;
-                        curBoxScore++;
-                    }
-                }
                 if (curBoxScore == 10)
+                {
                     boxes[curBox].transform.Find("markText").GetComponent<TextMeshProUGUI>().text = "/";
+                    score = score + curBoxScore;
+                    boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = "";
+                    boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
+                }
                 else
                     boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = curBoxScore.ToString();
-
+                break;
+            case 3:
+                boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = curBoxScore.ToString();
                 score = score + curBoxScore;
                 boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
                 break;
-            case 3:
-                foreach (PinPhysics pin in pins)
-                {
-                    if (pin.knocked && pin.previouslyHit)
-                        continue;
-                    else
-                    {
-                        pin.previouslyHit = true;
-                        curBoxScore++;
-                    }
-                }
-                boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = curBoxScore.ToString();
-                boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = score.ToString();
-                score = score + curBoxScore;
+            default:
+                boxes[curBox].transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = "0";
+                boxes[curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = "0";
                 break;
         }
     }

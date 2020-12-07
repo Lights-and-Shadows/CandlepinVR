@@ -6,7 +6,7 @@ using TMPro;
 
 public class ResetLane : MonoBehaviour
 {
-    public List<GameObject> pins, balls, pinSpawns, ballSpawns;
+    public List<GameObject> pins, balls, pinSpawns, ballSpawns, pinPhys;
 
     public ScoreSystem scoring;
 
@@ -20,8 +20,8 @@ public class ResetLane : MonoBehaviour
             pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
             pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().knocked = false;
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().previouslyHit = false;
+            pinPhys[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().knocked = false;
+            pinPhys[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().previouslyHit = false;
         }
 
         foreach (GameObject spawn in ballSpawns)
@@ -30,6 +30,8 @@ public class ResetLane : MonoBehaviour
             balls[ballSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
             balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
             balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+            balls[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().hasBeenRolled = false;
         }
 
 
@@ -52,6 +54,7 @@ public class ResetLane : MonoBehaviour
         }
         else
         {
+            scoring.boxes[scoring.curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = scoring.score.ToString();
             scoring.curBox++;
             scoring.curBoxScore = 0;
             scoring.currentRollNum = 0;

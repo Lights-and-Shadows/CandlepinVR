@@ -13,22 +13,24 @@ public class BallPhysics : MonoBehaviour
     void Start()
     {
         rb.maxAngularVelocity = 50f;
-        //hasBeenRolled = false;
+        hasBeenRolled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Lane")
+        if (collision.gameObject.tag == "Lane" && !hasBeenRolled)
         {
+            hasBeenRolled = true;
             scoring.currentRollNum++;
+            //Debug.Log(scoring.currentRollNum);
             StartCoroutine(InvokeScoring());
         }
     }
 
     public IEnumerator InvokeScoring()
     {
-        yield return new WaitForSeconds(3f);
-
+        yield return new WaitForSeconds(7f);
+        //Debug.Log("Time to check the score.");
         scoring.CheckScore();
     }
 }
