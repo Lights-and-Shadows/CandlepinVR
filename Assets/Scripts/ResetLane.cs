@@ -34,32 +34,6 @@ public class ResetLane : MonoBehaviour
             balls[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().hasBeenRolled = false;
         }
 
-
-        if (scoring.currentRollNum == 0)
-        {
-            
-        }
-        else if (scoring.curBox == 9)
-        {
-            foreach(GameObject box in scoring.boxes)
-            {
-                box.transform.Find("markText").GetComponent<TextMeshProUGUI>().text = "";
-                box.transform.Find("fillText").GetComponent<TextMeshProUGUI>().text = "";
-                box.transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = "";
-            }
-
-            scoring.curBox = 0;
-            scoring.curBoxScore = 0;
-            scoring.currentRollNum = 0;
-        }
-        else
-        {
-            scoring.boxes[scoring.curBox].transform.Find("scoreText").GetComponent<TextMeshProUGUI>().text = scoring.score.ToString();
-            scoring.curBox++;
-            scoring.curBoxScore = 0;
-            scoring.currentRollNum = 0;
-        }
-
         
     }
 }

@@ -21,16 +21,6 @@ public class BallPhysics : MonoBehaviour
         if (collision.gameObject.tag == "Lane" && !hasBeenRolled)
         {
             hasBeenRolled = true;
-            scoring.currentRollNum++;
-            //Debug.Log(scoring.currentRollNum);
-            StartCoroutine(InvokeScoring());
         }
-    }
-
-    public IEnumerator InvokeScoring()
-    {
-        yield return new WaitForSeconds(7f);
-        //Debug.Log("Time to check the score.");
-        scoring.CheckScore();
     }
 }

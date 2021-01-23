@@ -26,7 +26,7 @@ public class PinPhysics : MonoBehaviour
                 if (!previouslyHit)
                 {
                     previouslyHit = true;
-                    scoring.curBoxScore++;
+                    Debug.Log(gameObject.name + " has been hit.");
                 }
             }
             
