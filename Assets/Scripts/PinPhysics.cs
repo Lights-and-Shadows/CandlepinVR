@@ -19,7 +19,7 @@ public class PinPhysics : MonoBehaviour
     {
         if ((collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Pin"))
         {
-            if (transform.up.y < 0.3f)
+            if (transform.up.y < 0.5f)
             {
                 knocked = true;
 
