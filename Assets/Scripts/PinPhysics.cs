@@ -19,13 +19,17 @@ public class PinPhysics : MonoBehaviour
     {
         if ((collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Pin"))
         {
-            knocked = true;
-
-            if (!previouslyHit)
+            if (transform.up.y < 0.3f)
             {
-                previouslyHit = true;
-                scoring.curBoxScore++;
+                knocked = true;
+
+                if (!previouslyHit)
+                {
+                    previouslyHit = true;
+                    scoring.curBoxScore++;
+                }
             }
+            
         }
 
     }
