@@ -15,22 +15,17 @@ public class PinPhysics : MonoBehaviour
         previouslyHit = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Update()
     {
-        if ((collision.gameObject.tag == "Ball" || collision.gameObject.tag == "Pin"))
+        if (!previouslyHit)
         {
             if (transform.up.y < 0.5f)
             {
                 knocked = true;
 
-                if (!previouslyHit)
-                {
-                    previouslyHit = true;
-                    Debug.Log(gameObject.name + " has been hit.");
-                }
+                Debug.Log(gameObject.name + " has been hit.");
+                previouslyHit = true;
             }
-            
         }
-
     }
 }
