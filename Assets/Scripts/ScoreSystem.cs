@@ -1,15 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
+using System.Linq;
 
-public class ScoreSystem : MonoBehaviour
+internal class ScoreSystem
 {
-    public int currentBox = 1;
-
-    public void Start()
-    {
-        Debug.Log("Current Box: " + currentBox.ToString());
-    }
+    
 }
+
+
