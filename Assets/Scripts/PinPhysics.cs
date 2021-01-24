@@ -5,8 +5,6 @@ using UnityEngine;
 public class PinPhysics : MonoBehaviour
 {
     public bool knocked, previouslyHit; // previouslyHit will be set in another script on a pin-by-pin basis
-
-    public ScoreSystem scoring;
     private void Start()
     {
         //this.GetComponent<Rigidbody>().solverVelocityIterations = 10;

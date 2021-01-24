@@ -8,12 +8,8 @@ public class ResetLane : MonoBehaviour
 {
     public List<GameObject> pins, balls, pinSpawns, ballSpawns, pinPhys;
 
-    public ScoreSystem scoring;
-
     public void ResetTheLane()
     {
-        scoring.currentBox++;
-        Debug.Log("Current Box: " + scoring.currentBox.ToString());
 
         // Reset all moveable objects back to starting positions in scene + remove any current forces on them.
         foreach (GameObject spawn in pinSpawns)
