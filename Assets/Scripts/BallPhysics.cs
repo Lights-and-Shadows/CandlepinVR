@@ -16,9 +16,14 @@ public class BallPhysics : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Lane" && !hasBeenRolled)
+        if (!hasBeenRolled)
         {
-            hasBeenRolled = true;
+            if (collision.gameObject.tag == "Lane")
+            {
+                Debug.Log("Roll has been engaged.");
+
+                hasBeenRolled = true;
+            }
         }
     }
 }

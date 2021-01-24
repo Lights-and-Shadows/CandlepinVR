@@ -21,7 +21,7 @@ public class PinPhysics : MonoBehaviour
             {
                 knocked = true;
 
-                Debug.Log(gameObject.name + " has been hit.");
+                //Debug.Log(gameObject.name + " has been hit.");
                 previouslyHit = true;
             }
         }

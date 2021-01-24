@@ -32,7 +32,5 @@ public class ResetLane : MonoBehaviour
 
             balls[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().hasBeenRolled = false;
         }
-
-        
     }
 }
