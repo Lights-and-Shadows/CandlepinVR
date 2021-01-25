@@ -20,7 +20,6 @@ public class ResetLane : MonoBehaviour
             pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
             pinPhys[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().knocked = false;
-            pinPhys[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().previouslyHit = false;
         }
 
         foreach (GameObject spawn in ballSpawns)
@@ -29,8 +28,6 @@ public class ResetLane : MonoBehaviour
             balls[ballSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
             balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
             balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-
-            balls[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().hasBeenRolled = false;
         }
     }
 }

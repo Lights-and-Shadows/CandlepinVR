@@ -6,24 +6,12 @@ public class BallPhysics : MonoBehaviour
 {
     public Rigidbody rb;
 
-    public bool hasBeenRolled;
+    public bool isCurrentBall;
     // Start is called before the first frame update
     void Start()
     {
         rb.maxAngularVelocity = 50f;
-        hasBeenRolled = false;
-    }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!hasBeenRolled)
-        {
-            if (collision.gameObject.tag == "Lane")
-            {
-                Debug.Log("Roll has been engaged.");
-
-                hasBeenRolled = true;
-            }
-        }
+        isCurrentBall = false;
     }
 }
