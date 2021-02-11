@@ -12,7 +12,7 @@ public class ScoreSystem : MonoBehaviour
 
     private int currentScore, totalScore;
 
-    private int rollsRemaining;
+    public int rollsRemaining;
 
     private void Start()
     {
@@ -32,6 +32,15 @@ public class ScoreSystem : MonoBehaviour
         totalScore = currentScore = 0;
 
         rollsRemaining = 3;
+    }
+
+    public void CheckScore()
+    {
+        foreach (PinPhysics p in pins)
+        {
+            if (p.knocked)
+                currentScore++;
+        }
     }
 }
 

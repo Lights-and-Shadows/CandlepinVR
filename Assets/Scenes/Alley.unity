@@ -871,6 +871,11 @@ PrefabInstance:
       propertyPath: owner
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: -7057247720992890993, guid: 0b2dd60afa4f33c4082d9ffe777a2e0b,
+        type: 3}
+      propertyPath: system
+      value: 
+      objectReference: {fileID: 329661258}
     - target: {fileID: 2431031429826251946, guid: 0b2dd60afa4f33c4082d9ffe777a2e0b,
         type: 3}
       propertyPath: m_Mass
@@ -1982,6 +1987,7 @@ GameObject:
   - component: {fileID: 329661255}
   - component: {fileID: 329661257}
   - component: {fileID: 329661259}
+  - component: {fileID: 329661258}
   m_Layer: 0
   m_Name: XR Interaction Manager
   m_TagString: Untagged
@@ -2068,6 +2074,21 @@ MonoBehaviour:
   - {fileID: 1856864580}
   - {fileID: 1113191022}
   - {fileID: 1463563989}
+  ballPhys: []
+  system: {fileID: 329661258}
+--- !u!114 &329661258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329661254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c433f7e97c963d48a6779b123789b71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rollsRemaining: 0
 --- !u!114 &329661259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3349,6 +3370,11 @@ PrefabInstance:
       propertyPath: owner
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: -7057247720992890993, guid: 0b2dd60afa4f33c4082d9ffe777a2e0b,
+        type: 3}
+      propertyPath: system
+      value: 
+      objectReference: {fileID: 329661258}
     - target: {fileID: 2431031429826251946, guid: 0b2dd60afa4f33c4082d9ffe777a2e0b,
         type: 3}
       propertyPath: m_Mass
@@ -7267,6 +7293,11 @@ PrefabInstance:
       propertyPath: owner
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: -7057247720992890993, guid: 0b2dd60afa4f33c4082d9ffe777a2e0b,
+        type: 3}
+      propertyPath: system
+      value: 
+      objectReference: {fileID: 329661258}
     - target: {fileID: 2431031429826251946, guid: 0b2dd60afa4f33c4082d9ffe777a2e0b,
         type: 3}
       propertyPath: m_Mass

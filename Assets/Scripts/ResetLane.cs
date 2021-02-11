@@ -6,8 +6,8 @@ using TMPro;
 
 public class ResetLane : MonoBehaviour
 {
-    public List<GameObject> pins, balls, pinSpawns, ballSpawns, pinPhys;
-
+    public List<GameObject> pins, balls, pinSpawns, ballSpawns, pinPhys, ballPhys;
+    public ScoreSystem system;
     public void ResetTheLane()
     {
 
@@ -28,6 +28,10 @@ public class ResetLane : MonoBehaviour
             balls[ballSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
             balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
             balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+            ballPhys[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().IsRolled = false;
         }
+
+        system.rollsRemaining = 3;
     }
 }
