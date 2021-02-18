@@ -5,11 +5,13 @@ using UnityEngine;
 public class PinPhysics : MonoBehaviour
 {
     public bool knocked; // previouslyHit will be set in another script on a pin-by-pin basis
+    public bool previouslyHit;
     private void Start()
     {
         //this.GetComponent<Rigidbody>().solverVelocityIterations = 10;
 
         knocked = false;
+        previouslyHit = false;
     }
 
     private void Update()
@@ -20,7 +22,7 @@ public class PinPhysics : MonoBehaviour
             {
                 knocked = true;
 
-                //Debug.Log(gameObject.name + " has been hit.");
+                Debug.Log(gameObject.name + " has been hit.");
             }
         }
     }

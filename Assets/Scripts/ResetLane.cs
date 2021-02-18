@@ -12,26 +12,28 @@ public class ResetLane : MonoBehaviour
     {
 
         // Reset all moveable objects back to starting positions in scene + remove any current forces on them.
-        foreach (GameObject spawn in pinSpawns)
+        for (int i = 0; i < pins.Count; i++)
         {
-            pins[pinSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
-            pins[pinSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
-            pins[pinSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            pins[i].transform.position = pinSpawns[i].transform.position;
+            pins[i].transform.rotation = pinSpawns[i].transform.rotation;
+            pins[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+            pins[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
-            pinPhys[pinSpawns.IndexOf(spawn)].GetComponent<PinPhysics>().knocked = false;
+            pins[i].GetComponent<PinPhysics>().knocked = false;
         }
 
-        foreach (GameObject spawn in ballSpawns)
+        for (int j = 0; j < balls.Count; j++)
         {
-            balls[ballSpawns.IndexOf(spawn)].transform.position = spawn.transform.position;
-            balls[ballSpawns.IndexOf(spawn)].transform.rotation = spawn.transform.rotation;
-            balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().velocity = Vector3.zero;
-            balls[ballSpawns.IndexOf(spawn)].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            balls[j].transform.position = ballSpawns[j].transform.position;
+            balls[j].transform.rotation = ballSpawns[j].transform.rotation;
+            balls[j].GetComponent<Rigidbody>().velocity = Vector3.zero;
+            balls[j].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
-            ballPhys[ballSpawns.IndexOf(spawn)].GetComponent<BallPhysics>().IsRolled = false;
+            balls[j].GetComponent<BallPhysics>().IsRolled = false;
         }
 
         system.rollsRemaining = 3;
+        system.NextBox();
+        system.CalculateTotal();
     }
 }

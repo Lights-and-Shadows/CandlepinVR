@@ -24,8 +24,15 @@ public class BallPhysics : MonoBehaviour
             {
                 IsRolled = true;
                 system.rollsRemaining--;
-                system.CheckScore();
+                StartCoroutine(InitScorechecker());
             }
         }
+    }
+
+    public IEnumerator InitScorechecker()
+    {
+        yield return new WaitForSeconds(5f);
+
+        system.CheckScore();
     }
 }
