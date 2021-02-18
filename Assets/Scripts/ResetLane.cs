@@ -20,6 +20,7 @@ public class ResetLane : MonoBehaviour
             pins[i].GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 
             pins[i].GetComponent<PinPhysics>().knocked = false;
+            pins[i].GetComponent<PinPhysics>().previouslyHit = false;
         }
 
         for (int j = 0; j < balls.Count; j++)

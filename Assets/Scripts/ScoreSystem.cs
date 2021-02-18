@@ -9,7 +9,7 @@ public class ScoreSystem : MonoBehaviour
     public List<BallPhysics> balls;
     public List<Box> boxes;
 
-    private int totalScore;
+    private int totalScore, frameScore;
 
     public bool BonusScoreActive;
 
@@ -21,6 +21,7 @@ public class ScoreSystem : MonoBehaviour
     {
         index = 0;
         totalScore = 0;
+        frameScore = 0;
 
         rollsRemaining = 3;
 
@@ -112,14 +113,16 @@ public class ScoreSystem : MonoBehaviour
                         }
                     }
 
-                    if (currentScore == 10)
+                    frameScore += currentScore;
+
+                    if (frameScore == 10)
                     {
                         boxes[index].IsStrike = true;
                         BonusScoreActive = true;
                         Debug.Log("STRIKE!");
                     }
-                    boxes[index].score += currentScore;
 
+                    boxes[index].score = frameScore;
                     Debug.Log("First roll of Box #" + (index + 1) + ": " + currentScore.ToString());
                     break;
                 }
@@ -136,19 +139,22 @@ public class ScoreSystem : MonoBehaviour
                         }
                     }
 
-                    if (currentScore == 10)
+                    frameScore += currentScore;
+
+                    if (frameScore == 10)
                     {
                         boxes[index].IsSpare = true;
                         BonusScoreActive = true;
                         Debug.Log("SPARE!");
                     }
-                    boxes[index].score += currentScore;
+                    boxes[index].score = frameScore;
                     Debug.Log("Second roll of Box #" + (index + 1) + ": " + currentScore.ToString());
                     break;
                 }
             case 0: // Third roll
                 {
-                    boxes[index].score += currentScore;
+                    frameScore += currentScore;
+                    boxes[index].score = frameScore;
                     Debug.Log("Third roll of Box #" + (index + 1) + ": " + currentScore.ToString());
                     break;
                 }
@@ -172,6 +178,7 @@ public class ScoreSystem : MonoBehaviour
     public void NextBox()
     {
         index++;
+        frameScore = 0;
     }
 }
 
