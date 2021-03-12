@@ -8,11 +8,12 @@ public class PinPhysics : MonoBehaviour
     public bool previouslyHit;
 
     public Transform detector;
+    public GameObject light;
 
 
     private void Start()
     {
-        //this.GetComponent<Rigidbody>().solverVelocityIterations = 10;
+        this.GetComponent<Rigidbody>().sleepThreshold = 0.0f;
 
         knocked = false;
         previouslyHit = false;
@@ -29,6 +30,7 @@ public class PinPhysics : MonoBehaviour
                 if (hit.collider.tag == "Detector")
                 {
                     knocked = true;
+                    light.GetComponent<Renderer>().material.DisableKeyword("_EMISSION");
 
                     Debug.Log(gameObject.name + " has been hit.");
                 }

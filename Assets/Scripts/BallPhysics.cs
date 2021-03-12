@@ -11,7 +11,7 @@ public class BallPhysics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb.maxAngularVelocity = 50f;
+        rb.maxAngularVelocity = 200f;
 
         IsRolled = false;
     }

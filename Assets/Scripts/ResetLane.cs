@@ -21,6 +21,7 @@ public class ResetLane : MonoBehaviour
 
             pins[i].GetComponent<PinPhysics>().knocked = false;
             pins[i].GetComponent<PinPhysics>().previouslyHit = false;
+            pins[i].GetComponent<PinPhysics>().light.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
         }
 
         for (int j = 0; j < balls.Count; j++)
